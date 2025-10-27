@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Новости</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="news-card" id="news1">
+      <h3>Новость 1</h3>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae voluptatum suscipit sed delectus facere veritatis autem quisquam unde nam doloribus?</p>
+      <button class="open-btn" data-news="1">Открыть всплывающее окно</button>
+    </div>
+
+    <div class="news-card" id="news2">
+      <h3>Новость 2</h3>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae voluptatum suscipit sed delectus facere veritatis autem quisquam unde nam doloribus?</p>
+      <button class="open-btn" data-news="2">Открыть всплывающее окно</button>
+    </div>
+
+    <div class="news-card" id="news3">
+      <h3>Новость 3</h3>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae voluptatum suscipit sed delectus facere veritatis autem quisquam unde nam doloribus?</p>
+      <button class="open-btn" data-news="3">Открыть всплывающее окно</button>
+    </div>
+  </div>
+
+  <!-- Popup -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <h2 id="modal-title"></h2>
+      <p id="modal-text"></p>
+      <button id="close-btn">Закрыть</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

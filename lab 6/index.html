@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Column Image Slider</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <button id="leftBtn" class="header-btn left-btn">Левая колонка</button>
+        <button id="bothBtn" class="header-btn both-btn active">Обе две</button>
+        <button id="rightBtn" class="header-btn right-btn">Правая колонка</button>
+    </header>
+
+    <div class="main-container" id="mainContainer">
+        <div class="column left-column" data-column="left">
+            <img src="cat.jpg" alt="A cat resting on a table" onclick="expandColumn('left')">
+            <div class="background-color blue-bg"></div>
+        </div>
+        <div class="column right-column" data-column="right">
+            <img src="dog.jpg" alt="A fluffy white dog" onclick="expandColumn('right')">
+            <div class="background-color green-bg"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

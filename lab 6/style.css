@@ -1,0 +1,109 @@
+:root {
+    /* Define widths for easy adjustment */
+    --default-width: 50vw;
+    --expanded-width: 90vw;
+    --collapsed-width: 10vw; 
+    --transition-speed: 0.5s;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+/* Header Styling */
+.header {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.header-btn {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.left-btn { background-color: #d9534f; } /* Red */
+.both-btn { background-color: #f0ad4e; } /* Orange */
+.right-btn { background-color: #5cb85c; } /* Green */
+
+.header-btn.active {
+    outline: 3px solid #333; /* Visual cue for active state */
+}
+
+/* Main Container and Column Styling */
+.main-container {
+    display: flex;
+    width: 100vw; /* Full viewport width */
+    overflow: hidden; /* Important to hide the sliding column */
+}
+
+.column {
+    position: relative;
+    box-sizing: border-box;
+    height: 60vh; /* Adjust height as needed */
+    width: var(--default-width); /* Default to 50% width */
+    transition: width var(--transition-speed) ease-in-out, 
+                transform var(--transition-speed) ease-in-out; 
+    /* The transition for the sliding effect */
+    cursor: pointer;
+}
+
+/* Image and Background Styling */
+.column img {
+    width: 100%;
+    height: 80%; /* Takes up 80% of column height */
+    object-fit: cover; /* Ensures image covers the area without distortion */
+    display: block;
+}
+
+.background-color {
+    width: 100%;
+    height: 20%; /* Takes up 20% of column height */
+}
+
+.blue-bg { background-color: blue; }
+.green-bg { background-color: green; }
+
+/* Expansion States */
+
+/* State when the left column is expanded */
+.expand-left .left-column {
+    width: var(--expanded-width); /* e.g., 90% */
+}
+
+.expand-left .right-column {
+    width: var(--collapsed-width); /* e.g., 10% */
+    /* Slide the right column off-screen to the right */
+    transform: translateX(calc(var(--collapsed-width) - 100%)); 
+}
+
+/* State when the right column is expanded */
+.expand-right .right-column {
+    width: var(--expanded-width); /* e.g., 90% */
+}
+
+.expand-right .left-column {
+    width: var(--collapsed-width); /* e.g., 10% */
+    /* Slide the left column off-screen to the left */
+    transform: translateX(calc(100% - var(--collapsed-width))); 
+}
+
+/* Reset image/background height for the expanded view to match the image */
+.main-container.expand-left .right-column img,
+.main-container.expand-right .left-column img {
+    height: 100%; /* Image takes full height of the collapsed column */
+}
+
+.main-container.expand-left .right-column .background-color,
+.main-container.expand-right .left-column .background-color {
+    display: none; /* Hide background color for the collapsed column */
+}

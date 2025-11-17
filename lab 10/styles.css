@@ -1,0 +1,187 @@
+/* GENERAL */
+body {
+    background: black;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* ---------------------------------------------------------
+   CURTAIN ANIMATION
+--------------------------------------------------------- */
+#curtain {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url("images/curtain.jpg") center/cover no-repeat;
+    animation: curtain-open 3s ease forwards;
+}
+
+@keyframes curtain-open {
+    0%   { transform: translateY(0); }
+    100% { transform: translateY(-100%); }
+}
+
+/* ---------------------------------------------------------
+   STAGE + LAMP
+--------------------------------------------------------- */
+#stage {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+#lamp-container {
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+}
+
+#lamp {
+    width: 150px;
+    cursor: pointer;
+}
+
+#pull-string {
+    width: 2px;
+    height: 80px;
+    background: gold;
+    position: absolute;
+    left: 50%;
+    top: 110px;
+}
+
+#pull-ball {
+    width: 10px;
+    height: 10px;
+    background: gold;
+    border-radius: 50%;
+    position: absolute;
+    top: 185px;
+    left: calc(50% - 5px);
+}
+
+/* Pull-string wiggle animation */
+.pull-anim {
+    animation: pull-wiggle 0.4s ease;
+}
+@keyframes pull-wiggle {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(15px); }
+    100% { transform: translateY(0); }
+}
+
+/* ---------------------------------------------------------
+   SPOTLIGHT
+--------------------------------------------------------- */
+#spotlight {
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 420px solid transparent;
+    border-right: 420px solid transparent;
+    border-top: 700px solid rgba(255,255,120,0.35);
+    filter: blur(7px);
+    opacity: 0;
+    transition: opacity 1.2s;
+}
+
+/* ---------------------------------------------------------
+   MAGICIAN + HAT
+--------------------------------------------------------- */
+#magician {
+    width: 220px;
+    position: absolute;
+    left: 20%;
+    bottom: 60px;
+    opacity: 0;
+    transition: opacity 1s 0.5s;
+}
+
+#hat {
+    width: 220px;
+    position: absolute;
+    right: 20%;
+    bottom: 40px;
+    opacity: 0;
+    transition: opacity 1s 0.8s;
+}
+
+/* ---------------------------------------------------------
+   RABBIT (emerges from hat)
+--------------------------------------------------------- */
+#rabbit {
+    width: 140px;
+    position: absolute;
+    right: calc(20% + 35px);
+    bottom: 70px;     /* Hidden inside hat */
+    opacity: 0;
+}
+
+/* Rabbit popping up from hat */
+.rabbit-pop {
+    animation: rabbit-rise 1s forwards;
+}
+@keyframes rabbit-rise {
+    0%   { bottom: 70px; opacity: 0; }
+    50%  { bottom: 130px; opacity: 1; }
+    100% { bottom: 140px; opacity: 1; }
+}
+
+/* Then start hopping loop */
+.rabbit-hop {
+    animation: rabbit-hop-loop 2s ease-in-out infinite;
+    animation-delay: 1s; 
+}
+
+@keyframes rabbit-hop-loop {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-35px); }
+    100% { transform: translateY(0); }
+}
+
+/* ---------------------------------------------------------
+   SPARKLES (magic effect)
+--------------------------------------------------------- */
+#sparkles {
+    position: absolute;
+    left: 22%;
+    bottom: 210px;
+    width: 80px;
+    height: 80px;
+    opacity: 0;
+}
+
+.sparkle-active {
+    background: url("images/sparkles.gif") center/contain no-repeat;
+    opacity: 1;
+    animation: sparkle-fade 1.5s ease forwards;
+}
+
+@keyframes sparkle-fade {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+#toggleRabbit {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 12px 20px;
+    font-size: 18px;
+    background: #ffaa00;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 999999;
+    transition: 0.2s;
+}
+
+#toggleRabbit:hover {
+    background: #ffcc33;
+}

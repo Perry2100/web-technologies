@@ -1,0 +1,25 @@
+body {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.row input {
+    margin-right: 5px;
+    padding: 4px;
+}
+
+.row button {
+    margin-left: 2px;
+}
+
+#output {
+    margin-top: 20px;
+    font-family: Consolas, monospace;
+    white-space: pre;
+}

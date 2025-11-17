@@ -1,0 +1,41 @@
+body {
+    margin: 20px;
+    font-family: Arial, sans-serif;
+}
+
+#controls {
+    margin-bottom: 20px;
+}
+
+button {
+    margin-right: 10px;
+}
+
+.shape {
+    position: absolute;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* Colors for shapes */
+.square {
+    background: red;
+}
+
+.circle {
+    background: green;
+    border-radius: 50%;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 80px solid blue;
+}
+
+/* Highlight selected shape */
+.selected {
+    outline: 4px solid yellow;
+}

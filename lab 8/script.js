@@ -3,7 +3,7 @@ const addBtn = document.getElementById("addBtn");
 const saveBtn = document.getElementById("saveBtn");
 const output = document.getElementById("output");
 
-// Create a row 
+// Creates a row 
 function createRow(leftValue = "", rightValue = "") {
     const row = document.createElement("div");
     row.className = "row";

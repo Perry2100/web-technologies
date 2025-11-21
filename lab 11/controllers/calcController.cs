@@ -7,9 +7,6 @@ namespace YourProject.Controllers
     {
         Random rnd = new Random();
 
-        // ===========================
-        // 1. Passing Model (ViewModel)
-        // ===========================
         public IActionResult UsingModel()
         {
             int a = rnd.Next(0, 11);
@@ -28,9 +25,6 @@ namespace YourProject.Controllers
             return View(model);
         }
 
-        // ===========================
-        // 2. Passing DATA using ViewBag
-        // ===========================
         public IActionResult UsingViewBag()
         {
             int a = rnd.Next(0, 11);

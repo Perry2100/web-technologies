@@ -8,8 +8,9 @@ function addFigures(type) {
     for (let i = 0; i < count; i++) {
         let el = document.createElement("div");
         el.classList.add("shape", type);
-
-        let size = random(40, 150); // random shape size
+        
+        // random shape size
+        let size = random(40, 150); 
 
         if (type === "square" || type === "circle") {
             el.style.width = size + "px";

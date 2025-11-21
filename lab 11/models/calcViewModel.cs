@@ -8,6 +8,6 @@ namespace YourProject.Models
         public int Add  { get; set; }
         public int Sub  { get; set; }
         public int Mult { get; set; }
-        public string Div { get; set; }   // string because division may show error message
+        public string Div { get; set; }   
     }
 }
